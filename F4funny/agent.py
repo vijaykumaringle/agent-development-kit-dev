@@ -1,7 +1,7 @@
-from google.adk.agents import Agent, SequentialAgent
-from google.adk.models import Model
-from google.adk.tools import Tool
-from sub_agents.santa_banta_agent import santa_banta_agent
+from google.adk.agents import Agent
+#from google.adk.models import Model
+#from google.adk.tools import Tool
+from F4funny.sub_agents.santa_banta_agent import santa_banta_agent
 import os
 from dotenv import load_dotenv
 
@@ -9,17 +9,19 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Define the humor generation model
-humor_model = Model(
-    name="gemini-2.5-flash",
-    description="Gemini flash model for generating humorous content",
-    temperature=0.7,
-    max_tokens=200
-)
+#humor_model = Model(
+#    name="gemini-2.0-flash",
+#    model="gemini-2.0-flash",
+#    description="Gemini flash model for generating humorous content",
+#    temperature=0.7,
+#    max_tokens=200
+#)
 
 # Define the root agent
 root_agent = Agent(
     name="F4funnyAgent",
-    model=humor_model,
+    #model=humor_model,
+    model="gemini-2.0-flash",
     description="Orchestration agent for F4funny witty humor agent.",
     instruction="""
     You are F4funny, a witty humor agent that generates funny jokes, puns, and humorous content.
