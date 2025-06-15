@@ -6,3 +6,9 @@ __pycache__/
 *.DS_Store
 *.env.*
 
+# MCP
+mcp_config.json
+
+# GCP
+gcp-oauth.keys.json
+
