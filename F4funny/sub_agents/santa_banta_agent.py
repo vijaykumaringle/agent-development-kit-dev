@@ -1,20 +1,20 @@
 from google.adk.agents import Agent
-from google.adk.models import Model
+#from google.adk.models import Model
 
 # Define Santa and Banta model with specific configuration
-santa_banta_model = Model(
-    name="gemini-2.5-flash",
-    description="Gemini flash model specialized for Santa and Banta jokes",
-    temperature=0.8,  # Higher temperature for more creative jokes
-    max_tokens=150,   # Shorter responses for punchy jokes
-    top_p=0.9,
-    top_k=40
-)
+#santa_banta_model = Model(
+#    name="gemini-2.5-flash",
+#    description="Gemini flash model specialized for Santa and Banta jokes",
+#    temperature=0.8,  # Higher temperature for more creative jokes
+#    max_tokens=150,   # Shorter responses for punchy jokes
+#    top_p=0.9,
+#    top_k=40
+#)
 
 # Create the Santa and Banta subagent
 santa_banta_agent = Agent(
     name="SantaBantaAgent",
-    model=santa_banta_model,
+    model="gemini-2.0-flash",
     description="Agent specialized in generating Santa and Banta jokes with witty humor",
     instruction="""
     You are the Santa and Banta joke generator. Your job is to create funny, witty jokes 
