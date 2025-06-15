@@ -1,10 +1,21 @@
 from google.adk.agents import Agent
 from mcp import MCPTool
 from google.oauth2.credentials import Credentials
+from dotenv import load_dotenv
+import os
 
-# Initialize Google Drive credentials (replace with your actual credentials)
+# Load environment variables
+load_dotenv()
+
+# Initialize Google Drive credentials from environment variables
 credentials = Credentials.from_authorized_user_info(
-    info={"token": "YOUR_TOKEN", "refresh_token": "YOUR_REFRESH_TOKEN"},
+    info={
+        "token": os.getenv('GOOGLE_DRIVE_TOKEN'),
+        "refresh_token": os.getenv('GOOGLE_DRIVE_REFRESH_TOKEN'),
+        "client_id": os.getenv('GOOGLE_DRIVE_CLIENT_ID'),
+        "client_secret": os.getenv('GOOGLE_DRIVE_CLIENT_SECRET'),
+        "token_uri": "https://oauth2.googleapis.com/token"
+    },
     scopes=['https://www.googleapis.com/auth/drive.readonly']
 )
 
